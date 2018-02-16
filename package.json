@@ -1,0 +1,19 @@
+{
+    "name": "CryptoAsm",
+    "version": "0.0.1",
+    "description":"CryptoAsm is a virtual assembler to learn pointers in C",
+    "main": "index.html",
+    "author": {
+      "name": "ztaku",
+      "email": "tarukas2@gmail(dot)com"
+    },
+    "license": "MIT",
+
+    "window": {
+      "toolbar": false,
+      "resizable": false,
+      "always-on-top": true,
+      "width": 600,
+      "height": 600
+    }
+}
