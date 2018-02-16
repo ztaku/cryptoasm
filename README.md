@@ -1,125 +1,1 @@
-# CryptoAsm
-CryptoAsm�͉��z�A�Z���u���ł��B  
-���s�ł��閽�߂͂P�A�f�[�^�̈ړ������ł��B  
-C����̃|�C���^�̗����ɖ𗧂��܂��B
-
-## ���W�X�^
-���W�X�^�ɂ�a��p������܂��Bp�̓������̃A�h���X���w�������܂��B
-
-    mov p,a
-
-p���W�X�^��a���W�X�^�̒l�����܂��B
-
-## ���l
-    mov a,1
-
-a���W�X�^�ɐ��l�̂P�����܂��B
-
-## ������
-�������ɂ�0�Ԓn����6�Ԓn������܂��B�����Ƀf�[�^���i�[���܂��B
-�Ԓn�̂��Ƃ��A�h���X�Ƃ������܂��B
-
-## �ϐ�
-�ϐ�i,j,k�Ɣz��l���g���܂��B
-�ϐ�i�̓�������0�Ԓn�Aj��1�Ԓn�Ak��2�Ԓn�ɒl���i�[���܂��B
-
-    mov j,a
-
-a���W�X�^�̒l��ϐ�j�A�܂胁������1�Ԓn�Ɋi�[���܂��B
-
-    mov a,k
-
-�ϐ�k�A�܂胁������1�Ԓn�̒l��a���W�X�^�ɓ���܂��B
-
-## �z��
-�z��l��l[0],l[1],l[2]������A
-���ꂼ��3�Ԓn�A4�Ԓn�A5�Ԓn�ł��B
-
-    mov a,l[1]
-
-�z��l[1]�܂胁����4�Ԓn�̃f�[�^��a���W�X�^�ɓ���܂��B
-
-    mov l[0],a
-
-a���W�X�^�̒l��z��l[0]�܂胁����3�Ԓn�Ɋi�[���܂��B
-
-## �|�C���^
-p���W�X�^�̓A�h���X��ێ����A���̃A�h���X�Ɋi�[���ꂽ�f�[�^��
-�A�N�Z�X�ł��܂��B
-
-    mov p,1
-    mov a,*p
-
-p���W�X�^��1�����܂��B
-a���W�X�^��1�Ԓn�̓��e������܂��B
-
-1�Ԓn�̓��e��10�̎���10���A
-1�Ԓn�̓��e��20�̎���20���Aa���W�X�^�ɂ���܂��B
-
-    mov p,2
-    mov *p,a
-
-p���W�X�^��2�����܂��B
-2�Ԓn��a���W�X�^�ɂ̓��e������܂��B
-
-## �|�C���^ 2
-
-    mov p,2
-    mov *p+1,a
-
-p��2�����܂��B
-�����1�𑫂����A�h���X�A�܂�3�Ԓn��a���W�X�^�̒l���i�[���܂��B
-
-## �A�h���X
-�ϐ��̃A�h���X�����o���܂��B
-
-    mov p,&j
-
-p���W�X�^�ɕϐ�j�̃A�h���X����܂��B
-�ϐ�j��1�Ԓn�ł�����p�ɐ��l1�����邱�ƂɂȂ�܂��B
-
-�ȉ��̖��߂͂���܂���B
-
-    mov &j,p ;(NG�j
-
-&j�͐��l1���Ӗ����܂��B���l��1��p���W�X�^�̒l������邱�Ƃ͂ł��܂���B
-
-## ���ߍs
-���s���閽�߂���ׂĂ���܂��B
-1�s���ҏW�ł��܂��B
-
-## step���s�{�^��
-step��������1���߂����s���܂��B
-
-## reset���s�{�^��
-reset�������ƍŏ��̖��߂ɖ߂�܂��B
-
-## insert�{�^��
-insert�������Ɩ��ߍs�𑝂₷���Ƃ��ł��܂��B
-
-## �C���X�g�[��
-
-    mkdir crypto
-    cd crypto
-    npm install --save nw
-
-## �v���O�����̎��s
-
-nw.js�Ŏ��s�ł��܂��B
-
-..\node_modules\.bin\nw
-
-
-
-
-
-
-
-CryptoAsm is virtual assembler.
-
-It is an assembler to understand the point of C language.
-
-mov p,1   ; p <- 1.  Register p has  address 1 of memory.
-mov a,*p  ; Register a <- Contents of memory address 1.
-
-
+# CryptoAsmCryptoAsmは仮想アセンブラです。  実行できる命令は１つ、データの移動だけです。  C言語のポインタの理解に役立ちます。## レジスタレジスタにはaとpがあります。pはメモリのアドレスを指し示します。    mov p,apレジスタにaレジスタの値を入れます。## 数値    mov a,1aレジスタに数値の１を入れます。## メモリメモリには0番地から6番地があります。ここにデータを格納します。番地のことをアドレスとも言います。## 変数変数i,j,kと配列lが使えます。変数iはメモリの0番地、jは1番地、kは2番地に値を格納します。    mov j,aaレジスタの値を変数j、つまりメモリの1番地に格納します。    mov a,k変数k、つまりメモリの1番地の値をaレジスタに入れます。## 配列配列lはl[0],l[1],l[2]があり、それぞれ3番地、4番地、5番地です。    mov a,l[1]配列l[1]つまりメモリ4番地のデータをaレジスタに入れます。    mov l[0],aaレジスタの値を配列l[0]つまりメモリ3番地に格納します。## ポインタpレジスタはアドレスを保持し、そのアドレスに格納されたデータにアクセスできます。    mov p,1    mov a,*ppレジスタに1を入れます。aレジスタに1番地の内容をいれます。1番地の内容が10の時は10を、1番地の内容が20の時は20を、aレジスタにいれます。    mov p,2    mov *p,apレジスタに2を入れます。2番地にaレジスタにの内容をいれます。## ポインタ 2    mov p,2    mov *p+1,apに2を入れます。それに1を足したアドレス、つまり3番地にaレジスタの値を格納します。## アドレス変数のアドレスを取り出します。    mov p,&jpレジスタに変数jのアドレス入れます。変数jは1番地ですからpに数値1を入れることになります。以下の命令はありません。    mov &j,p ;(NG）&jは数値1を意味します。数値の1にpレジスタの値をいれることはできません。## 命令行実行する命令を並べてあります。1行ずつ編集できます。## step実行ボタンstepを押すと1命令ずつ実行します。## reset実行ボタンresetを押すと最初の命令に戻ります。## insertボタンinsertを押すと命令行を増やすことができます。## インストール    mkdir crypto    cd crypto    npm install --save nw## プログラムの実行nw.jsで実行できます。..\node_modules\.bin\nwCryptoAsm is virtual assembler.It is an assembler to understand the point of C language.mov p,1   ; p <- 1.  Register p has  address 1 of memory.mov a,*p  ; Register a <- Contents of memory address 1.
